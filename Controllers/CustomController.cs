@@ -3,7 +3,7 @@
 namespace UserManagement.Controllers
 {
 
-    [Route("api/register")]
+    [Route("api/")]
     [ApiController]
     public class CustomControllerBase : ControllerBase
     {

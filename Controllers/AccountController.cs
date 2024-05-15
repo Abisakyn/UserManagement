@@ -24,7 +24,7 @@ namespace UserManagement.Controllers
             _roleManager = roleManager;
             _jwtService = jwtService;
         }
-        [HttpPost]
+        [HttpPost("Register")]
 
         public async Task<ActionResult<AppUser>>PostRegister(RegisterDTO registerDTO)
         {
