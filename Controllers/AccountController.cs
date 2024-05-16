@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Net.Mail;
 using UserManagement.Authetication;
 using UserManagement.DTO;
 using UserManagement.ServiceContract;
@@ -48,6 +50,8 @@ namespace UserManagement.Controllers
 
             if (result.Succeeded)
             {
+
+
                 await _signInManager.SignInAsync(user,isPersistent: false);
 
                var authenticationResponse= _jwtService.CreateJwtToken(user);
