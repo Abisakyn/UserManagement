@@ -23,7 +23,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IJwtService, JwtService>();
 
-builder.Services.AddDbContext<AppDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -36,10 +36,10 @@ builder.Services.AddIdentity<AppUser, AppRole>(options =>
     options.Password.RequireUppercase = false;
 
 })
-    .AddEntityFrameworkStores<AppDbContext>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders()
-    .AddUserStore<UserStore<AppUser, AppRole, AppDbContext, Guid>>()
-    .AddRoleStore<RoleStore<AppRole, AppDbContext, Guid>>();
+    .AddUserStore<UserStore<AppUser, AppRole, ApplicationDbContext, Guid>>()
+    .AddRoleStore<RoleStore<AppRole, ApplicationDbContext, Guid>>();
 
 //JWT
 builder.Services.AddAuthentication(options =>

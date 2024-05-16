@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using UserManagement.Enums;
 
 namespace UserManagement.DTO
 {
@@ -21,5 +22,7 @@ namespace UserManagement.DTO
 
         [Required(ErrorMessage = "Password cant be empty")]
         public string? Password { get; set; }
+
+        public UserTypeOptions UserType { get; set; } = UserTypeOptions.User;
     }
 }
