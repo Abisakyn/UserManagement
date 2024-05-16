@@ -1,1 +1,1 @@
-Asp.Net 8  Authentification and Authorization, including JWT Authorization and Role based Access control.
+Asp.Net 8  authentication and Authorization, including JWT Authorization and Role-based Access control.
